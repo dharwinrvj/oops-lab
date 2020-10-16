@@ -53,7 +53,7 @@ class generic<T extends Number> {
     }
 
     public void maxInRange() {
-        System.out.print("Find maximum element in the range(2,6): ");
+        System.out.print("Finding maximum element in the range(2,6): ");
         T temp;
         for (int i = 1; i < 5; i++) {
             for (int j = i + 1; j < 5; j++) {

@@ -1,3 +1,5 @@
+import java.util.*;
+
 public class genericfunc {
     public static void main(String[] args) {
         Integer a[] = { 2, 4, 5, 68, 3, 9, 564, 81, 9, 276 };
@@ -20,19 +22,28 @@ public class genericfunc {
 
 class generic<T extends Number> {
     T[] val;
+    Scanner obj = new Scanner(System.in);
 
     generic(T[] val) {
         this.val = val;
     }
 
     void oddCount() {
-        int count = 0;
+        int count = 0, flag = 0;
         for (int i = 0; i < val.length; i++) {
-            if ((val[i].doubleValue() % 2.0) == 1.0)
+            if ((val[i].intValue() % 2) == 1 && val[i] instanceof Integer)
                 count++;
+            if (val[i] instanceof Integer)
+                flag = 1;
+            else {
+                flag = -1;
+                break;
+            }
 
         }
-        System.out.println("No. of Odd integers: " + count);
+        System.out.print("No. of Odd integers: " + count);
+        if (flag == -1)
+            System.out.println(" - It is Only available for Integers");
     }
 
     void exchangePosition() {
@@ -42,30 +53,42 @@ class generic<T extends Number> {
             System.out.print(val[i] + " ");
         }
         System.out.println();
-        System.out.print("After exchanging elements at the position 2 and 5: ");
-        temp = val[1];
-        val[1] = val[4];
-        val[4] = temp;
-        for (int i = 0; i < val.length; i++) {
-            System.out.print(val[i] + " ");
-        }
-        System.out.println();
+        System.out.println("Enter 2 position to exchange values: ");
+        int a = obj.nextInt();
+        int b = obj.nextInt();
+        if (a > 0 && a <= val.length) {
+            System.out.print("After exchanging elements at the position " + a + " and " + b + ": ");
+            temp = val[a - 1];
+            val[a - 1] = val[b - 1];
+            val[a - 1] = temp;
+            for (int i = 0; i < val.length; i++) {
+                System.out.print(val[i] + " ");
+            }
+            System.out.println();
+        } else
+            System.out.println("Enter correct positions");
     }
 
     public void maxInRange() {
-        System.out.print("Finding maximum element in the range(2,6): ");
-        T temp;
-        for (int i = 1; i < 5; i++) {
-            for (int j = i + 1; j < 5; j++) {
+        System.out.println("Enter a lower and upper range: ");
+        int a = obj.nextInt();
+        int b = obj.nextInt();
+        if (a > 0 && b <= val.length) {
+            System.out.print("Finding maximum element in the range(" + a + "," + b + "): ");
+            T temp;
+            for (int i = a - 1; i < b - 1; i++) {
+                for (int j = i + 1; j < b - 1; j++) {
 
-                if (val[i].doubleValue() > val[j].doubleValue()) {
-                    temp = val[i];
-                    val[i] = val[j];
-                    val[j] = temp;
+                    if (val[i].doubleValue() > val[j].doubleValue()) {
+                        temp = val[i];
+                        val[i] = val[j];
+                        val[j] = temp;
+                    }
                 }
             }
-        }
-        System.out.println(val[4]);
+            System.out.println(val[b - 2]);
+        } else
+            System.out.println("Enter a correct range");
 
     }
 }

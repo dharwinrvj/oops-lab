@@ -41,9 +41,9 @@ class generic<T extends Number> {
             }
 
         }
-        System.out.print("No. of Odd integers: " + count);
+        System.out.println("No. of Odd integers: " + count);
         if (flag == -1)
-            System.out.println(" - It is Only available for Integers");
+            System.out.println("It is Only available for Integers");
     }
 
     void exchangePosition() {
@@ -60,7 +60,7 @@ class generic<T extends Number> {
             System.out.print("After exchanging elements at the position " + a + " and " + b + ": ");
             temp = val[a - 1];
             val[a - 1] = val[b - 1];
-            val[a - 1] = temp;
+            val[b - 1] = temp;
             for (int i = 0; i < val.length; i++) {
                 System.out.print(val[i] + " ");
             }

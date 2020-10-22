@@ -1,2 +1,2 @@
 # oops-lab
-OOPS Lab programs
+OOPS Laboratory programs

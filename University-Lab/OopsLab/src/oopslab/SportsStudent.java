@@ -57,9 +57,9 @@ class Result extends Sports {
 
 public class SportsStudent {
     public static void main(String srgs[]) {
-        Result one = new Result("Dharwin", "19CSE101", 98, 100, 99, 9);
-        Result three = new Result("Vasanth", "19CSE128", 78, 56, 10, 2);
-        Result two = new Result("Pandi", "19CSE78", 89, 98, 23, 10);
+        Result one = new Result("Dharwin", "19CSE101", 9, 100, 99, 91);
+        Result three = new Result("Vasanth", "19CSE128", 7, 56, 10, 78);
+        Result two = new Result("Pandi", "19CSE78", 8, 98, 67, 100);
         one.printresult();
         two.printresult();
         three.printresult();
